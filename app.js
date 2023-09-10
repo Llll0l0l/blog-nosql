@@ -3,8 +3,8 @@ const path = require('path');
 const express = require('express');
 
 
-const db = require('../data/database');
-const blogRoutes = require('../routes/blog');
+const db = require('./data/database');
+const blogRoutes = require('./routes/blog');
 
 const app = express();
 
@@ -23,6 +23,8 @@ app.use(function(error, req, res, next) {
     console.log(error);
     res.status(500).render('500');
 });
+
+
 
 
 db.connectToDatabase().then(function() {
